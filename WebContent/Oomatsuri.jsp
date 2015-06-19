@@ -24,10 +24,9 @@
 	// 設定画面からPOSTされたときはその内容をファイルに書き込む
 
 	String FILENAME = "Oomatsuri.txt";
-	//String filepath = application.getRealPath(FILENAME);
-	String filepath = FILENAME;
+	String filepath = application.getRealPath(FILENAME);
 
-	out.println("filepath:"+filepath);
+	//out.println("filepath:"+filepath);
 
 	File file = new File(filepath);
 	if(!file.exists())
