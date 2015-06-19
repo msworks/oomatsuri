@@ -20,14 +20,18 @@
 <body>
 
 <%
-	String FILENAME = "Oomatsuri.txt";
-	String filepath = application.getRealPath(FILENAME);
+	// ファイルがなければ設定ファイルを生成
+	// 設定画面からPOSTされたときはその内容をファイルに書き込む
 
-	//out.println("filepath:"+filepath);
+	String FILENAME = "Oomatsuri.txt";
+	//String filepath = application.getRealPath(FILENAME);
+	String filepath = FILENAME;
+
+	out.println("filepath:"+filepath);
 
 	File file = new File(filepath);
-	if(!file.exists()){
-		// 設定ファイルを生成
+	if(!file.exists())
+	{
 		FileWriter fileWriter = new FileWriter(filepath);
 		BufferedWriter writer = new BufferedWriter(fileWriter);
 		writer.write("30,30,10,10,10,10");
@@ -43,18 +47,69 @@
 		out.println("設定ファイルを生成しました<BR>");
 	}
 
+	// POSTされたか？
+	if( request.getParameter("textBox11") != null )
+	{
+		// textBox11がリクエストパラメータにあればPOSTされたとみなす
+		List<String[]> params = Arrays.asList(
+			new String[]{ "textBox11", "textBox12", "textBox13", "textBox14", "textBox15", "textBox16"},
+			new String[]{ "textBox21", "textBox22", "textBox23", "textBox24", "textBox25", "textBox26"},
+			new String[]{ "textBox31", "textBox32", "textBox33", "textBox34", "textBox35", "textBox36"}
+		);
+
+		String content = "";
+
+		for(String[] paramLine : params){
+			List<String> values = new LinkedList<String>();
+			for(String paramName : paramLine){
+				String v = request.getParameter(paramName);
+
+				// 入力チェック(数値でなければエラーページにフォワード)
+				try{
+					int val = Integer.parseInt(v);
+				}catch( Exception e ){
+					v = "0";
+					out.println("設定内容に間違いがあります<BR>");
+				}
+				values.add(v);
+			}
+			String line = String.join(",", values);
+			content += line;
+			content += System.getProperty("line.separator");
+		}
+
+		FileWriter fileWriter = new FileWriter(filepath);
+		BufferedWriter writer = new BufferedWriter(fileWriter);
+
+		writer.write(content);
+		writer.newLine();
+
+		writer.close();
+		fileWriter.close();
+
+		out.println("設定ファイルを更新しました<BR>");
+	}
+
 	// 設定ファイルから設定値を読み取る
 	Map<Integer, Integer> valueMap = new HashMap<Integer, Integer>();
 	FileReader fileReader = new FileReader(filepath);
 	BufferedReader reader = new BufferedReader(fileReader);
 	String line="";
 	int row=10;
-	while ((line = reader.readLine()) != null) {
+	while ((line = reader.readLine()) != null)
+	{
 		//out.println(line + "<BR>");
 		String[] values = line.split(",");
 		int count = 1;
-		for( String value : values ){
-			valueMap.put(row+count, Integer.parseInt(value));
+		for( String value : values )
+		{
+			int v;
+			try{
+				v = Integer.parseInt(value);
+			} catch(Exception e){
+				v = 0;
+			}
+			valueMap.put(row+count, v);
 			count++;
 		}
 		row+=10;
@@ -71,7 +126,7 @@
 
 <%!
 	/***
-		テーブルを出力する
+	 * テーブルを出力する
 	*/
 	String getTable(List<Integer> index, String title, Map<Integer,Integer> valueMap, String[]lefts){
 		String ret = "";
@@ -89,7 +144,7 @@
 		for(Integer i : index){
 			ret += "<tr>\n";
 			ret += "<td>" + lefts[count] + "</td>\n";
-			ret += "<td>" + valueMap.get(i) + "</td>\n";
+			ret += "<td><input type=\"text\" name=\"textBox" + i + "\" value=\"" + valueMap.get(i) + "\"></td>\n";
 			ret += "<td>％</td>\n";
 			count++;
 		}
@@ -104,7 +159,7 @@
 
 <h1>大祭り管理画面</h1>
 
-<form method="post" action="result.jsp">
+<form method="post" action="Oomatsuri.jsp">
 
       <div class="row">
 		<%= getTable(index1, "共通設定画面PC(リアル)", valueMap, lefts) %>
@@ -112,7 +167,7 @@
 		<%= getTable(index3, "共通設定画面(スマホ)アプリ", valueMap, lefts) %>
       </div>
 
-	<input type="submit" class="btn btn-lg btn-primary" onclick="location.href='result.jsp'"value="変更">
+	<input type="submit" class="btn btn-lg btn-primary" onclick="location.href='Oomatsuri.jsp'"value="変更">
 	<input type="button" class="btn btn-lg btn-primary" onclick="location.href='Setting.jsp'"value="戻る">
 
 </form>
