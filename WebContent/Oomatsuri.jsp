@@ -73,7 +73,7 @@
 				}
 				values.add(v);
 			}
-			String line = String.join(",", values);
+			String line = join(",", values);
 			content += line;
 			content += System.getProperty("line.separator");
 		}
@@ -154,6 +154,31 @@
 		ret += "</div>\n";
 
 		return ret;
+	}
+
+	String join (String separator, List<String> elements)
+	{
+		// 要素が０個の場合は空文字を返す
+		// 要素が１個の場合はその要素それ自身を返す
+
+		if( elements.size() == 0 )
+		{
+			return "";
+		}
+
+		if( elements.size() == 1 )
+		{
+			return elements.get(0);
+		}
+
+		String line = elements.get(0);
+		for(int i=1; i<elements.size(); i++)
+		{
+			line += separator;
+			line += elements.get(i);
+		}
+
+		return line;
 	}
 %>
 
