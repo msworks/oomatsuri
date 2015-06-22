@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5,minimum-scale=0.5, maximum-scale=0.5, user-scalable=yes">
+<title>デモ用</title>
+<style type="text/css">
+
+
+
+.clearfix:after{
+    content: "."; 
+    display: block; 
+    height: 0; 
+    font-size:0;	
+    clear: both; 
+	visibility:hidden;
+}
+.clearfix{
+	display: inline-block;
+} 
+* html .clearfix{
+	height: 1%;
+}
+.clearfix{
+	display:block;
+}
+#container {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#head {
+	background-color: #390;
+	color: #FFF;
+	padding-top: 30px;
+	padding-right: 5%;
+	padding-bottom: 30px;
+	padding-left: 5%;
+}
+#content {
+	color: #FFF;
+	background-color: #000;
+	padding-top: 30px;
+	padding-right: 5%;
+	padding-bottom: 30px;
+	padding-left: 5%;
+}
+.item {
+	float: left;
+	line-height: 150%;
+	width: 30%;
+	font-size: 32px;
+}
+.result {
+	float: left;
+	line-height: 150%;
+	width: 70%;
+	text-align: right;
+	color: #FF0;
+	font-size: 32px;
+}
+.menu_bt {
+	font-size: 32px;
+	border: 1px solid #090;
+	display: block;
+	line-height: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+	background-color: #0C0;
+	border-radius: 15px;        /* CSS3草案 */
+	-webkit-border-radius: 15px;    /* Safari,Google Chrome用 */
+	-moz-border-radius: 15px;   /* Firefox用 */
+	padding: 25px;
+}
+.menu_bt a {
+	display: block;
+}
+.menu_bt a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+.menu_bt a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+.menu_bt a:hover {
+	color: #FF0;
+	text-decoration: none;
+}
+.menu_bt a:active {
+	color: #FFF;
+	text-decoration: none;
+}
+.bannerspace {
+	font-size: 24px;
+	border: 1px solid #666;
+	display: block;
+	line-height: 30px;
+	margin-bottom: 30px;
+	text-align: center;
+	background-color: #333;
+	padding-top: 40px;
+	padding-right: 25px;
+	padding-bottom: 40px;
+	padding-left: 25px;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+  <div id="head" class="clearfix">
+    <div class="item">残高</div>
+    <div class="result">$1,000,000,000.00</div>
+    <div class="item">レート</div>
+    <div class="result">1/20cent</div>
+  </div>
+  <div id="content">
+    <div class="menu_bt"><a href="menu2.html">レート変更</a></div>
+    <div class="bannerspace">広告スペース</div>
+    <div class="menu_bt"><a href="#">登　録</a></div>
+    <div class="bannerspace">広告スペース</div>
+    <div class="menu_bt"><a href="#">操作方法</a></div>
+    <div class="menu_bt"><a href="#">アプリ終了</a></div>
+    <div class="menu_bt"><a href="#">お問い合わせ</a></div>
+    <div class="menu_bt"><a href="#">レート変更</a></div>
+  </div>
+</div>
+</body>
+</html>
