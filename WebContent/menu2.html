@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -203,6 +203,11 @@ background-color: #390;
 }
 
 </style>
+<script language="javascript" type="text/javascript">
+	function OnSubmitClick() {
+		window.Unity.call('SUBMIT');
+	}
+</script>
 </head>
 
 <body>
@@ -229,7 +234,7 @@ background-color: #390;
 </div>
 
  <div class="menu_bt">
-    <button type="submit" class="save_button">設定変更する</button>
+    <Button type="submit" class="save_button" onclick="OnSubmitClick();">設定変更する</button>
    </div>
 </form>
    </div>
