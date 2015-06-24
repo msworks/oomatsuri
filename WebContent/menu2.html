@@ -203,9 +203,20 @@ background-color: #390;
 }
 
 </style>
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
 	function OnSubmitClick() {
-		window.Unity.call('SUBMIT');
+		alert('開始');
+		collection = document.forms.infoForm.cent;
+		array = ["5cent", "20cent", "40cent", "100cent"];
+		msg = "submit:";
+
+		for( i=0; i<4; i++ ){
+			if( collection[i].checked ){
+				msg += array[i];
+			}
+		}
+		alert(msg);
+		window.Unity.call(msg);
 	}
 </script>
 </head>
@@ -225,10 +236,10 @@ background-color: #390;
     <fieldset>
         <legend>１枚当たりの金額</legend>
         <ul class="list_view">
-            <li><input type="radio" name="test1" id="on" checked><label for="on">1枚/5セント</label></li>
-            <li><input type="radio" name="test1" id="off"><label for="off">1枚/20セント</label></li>
-              <li><input type="radio" name="test1" id="off"><label for="off">1枚/40セント</label></li>
-                <li><input type="radio" name="test1" id="off"><label for="off">1枚/ 1ドル　</label></li>
+            <li><input type="radio" name="cent" id="on" checked><label for="on">1枚/5セント</label></li>
+            <li><input type="radio" name="cent" id="off"><label for="off">1枚/20セント</label></li>
+              <li><input type="radio" name="cent" id="off"><label for="off">1枚/40セント</label></li>
+                <li><input type="radio" name="cent" id="off"><label for="off">1枚/ 1ドル　</label></li>
         </ul>
     </fieldset>
 </div>
