@@ -45,6 +45,17 @@
 	padding-right: 5%;
 	padding-bottom: 30px;
 	padding-left: 5%;
+	
+}
+
+#content2 {
+	color: #FFF;
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	
+	
+	
 }
 .item {
 	float: left;
@@ -92,19 +103,44 @@
 	color: #FFF;
 	text-decoration: none;
 }
+
+
+
+#wrap{width:100%;display:flex;justify-content: center;padding:0;list-style: none;}
+.box1{width:calc(100% / 3);margin:2px;}
+.box1:hover, .box2:hover{opacity:0.8;}
+.box1 a{color: #FFF;
+	text-decoration: none;}
+p{text-align:center;color:#fff;font-weight:bold;}
+.a{
+	font-size:24px;
+	background-color: #0C0;
+	border-radius: 15px;        /* CSS3草案 */
+	-webkit-border-radius: 15px;    /* Safari,Google Chrome用 */
+	-moz-border-radius: 15px;   /* Firefox用 */
+	}
+
+
 .bannerspace {
 	font-size: 24px;
 	border: 1px solid #666;
 	display: block;
 	line-height: 30px;
+	margin-bottom: 30px;
 	text-align: center;
 	background-color: #333;
+	padding-top: 40px;
+	padding-right: 0px;
 	padding-bottom: 40px;
-	}
+	padding-left: 0px;
+}
+
+
 </style>
 </head>
 
 <body>
+
 <div id="container">
   <div id="head" class="clearfix">
     <div class="item">残高</div>
@@ -112,16 +148,28 @@
     <div class="item">レート</div>
     <div class="result">1/20cent</div>
   </div>
-  <div id="content">
+ 
+    
+    <div class="bannerspace"><img src="2.png" width="100%"></div>
+ 
+
+
+
+<ul id="wrap">
+    <li class="box1 a"><a href="menu3.html">
+      <p>前へ</p>
+    </a></li>
+    <li class="box1 a"><a href="menu3_3.html"><p>次へ</p></li>
+
+</ul>
+
+
+ <div class="menu_bt"><a href="menu1.html">メニュートップ</a></div>
     <div class="menu_bt"><a href="menu2.html">レート変更</a></div>
-    <div class="bannerspace"><img src="1a.png" width="100%"></div>
-    <div class="menu_bt"><a href="https://e-gaming.club/#registerPopup" target="_blank">登　録</a></div>
-    <div class="bannerspace"><img src="2a.png" width="100%"></div>
-    <div class="menu_bt"><a href="menu3.html">操作方法</a></div>
-    <div class="menu_bt"><a href="#">アプリ終了</a></div>
+    
     <!--<div class="menu_bt"><a href="#">お問い合わせ</a></div>-->
    <!--<div class="menu_bt"><a href="#">レート変更</a></div>-->
-  </div>
+
 </div>
 </body>
 </html>
