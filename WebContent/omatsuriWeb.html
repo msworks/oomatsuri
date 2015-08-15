@@ -15,8 +15,8 @@
 		<script type="text/javascript">
 		<!--
 			var config = {
-				width: 200, 
-				height: 320,
+				width: 400, 
+				height: 640,
 				params: { enableDebugging:"0" }
 				
 			};
@@ -59,6 +59,17 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "omatsuriWeb.unity3d");
 			});
+			
+			function GetParameter()
+			{
+				alert("GetParameter");
+				u.getUnity().SendMessage("ApplicationState", "Response", "testcode");
+			}
+			
+			function AlertByUnity(arg)
+			{
+				alert(arg);
+			}
 		-->
 		</script>
 		<style type="text/css">
@@ -117,7 +128,6 @@
 		</style>
 	</head>
 	<body>
-		<p class="header"><span>Unity Web Player | </span>omatsuri</p>
 		<div class="content">
 			<div id="unityPlayer">
 				<div class="missing">
@@ -127,6 +137,5 @@
 				</div>
 			</div>
 		</div>
-		<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
 	</body>
 </html>
