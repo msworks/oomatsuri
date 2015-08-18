@@ -62,8 +62,8 @@
 			
 			function GetParameter()
 			{
-				alert("GetParameter");
-				u.getUnity().SendMessage("ApplicationState", "Response", "testcode");
+				var query = document.location.search.substring(1);
+				u.getUnity().SendMessage("ApplicationState", "Response", query);
 			}
 			
 			function AlertByUnity(arg)
