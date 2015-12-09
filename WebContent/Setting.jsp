@@ -7,21 +7,32 @@
 <title>管理画面</title>
 </head>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
 <body>
-<h1>管理画面</h1>
 
-<input type="button" class="btn btn-lg btn-primary" onclick="location.href='Oomatsuri.jsp'"value="大祭り">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
 
-<input type="button" class="btn btn-lg btn-primary" onclick="location.href='TheOcean.jsp'"value="TheOcean">
+<h1>機械割設定（０～６）</h1>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#game1" data-toggle="tab">The Ocean</a></li>
+  <li><a href="#game2" data-toggle="tab">大祭り</a></li>
+  <li><a href="#game3" data-toggle="tab">I am pierrot</a></li>
+ </ul>
+
+<div class="tab-content">
+	<div class="tab-pane fade in active" id="game1">
+		game1
+	</div>
+	<div class="tab-pane fade" id="game2">
+		game2
+	</div>
+	<div class="tab-pane fade" id="game3">
+		game3
+	</div>
+</div>
 
 </body>
 </html>
