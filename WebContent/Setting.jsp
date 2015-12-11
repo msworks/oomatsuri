@@ -9,10 +9,27 @@
 </head>
 <body>
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $.getJSON("Setting.json", function(data){
+        for(var i in data){
+        $("#output").append("<li><strong>" + data[i].division + "</strong></li>");
+            for(var j in data[i].person){
+                $("#output").append("<li>" + data[i].person[j].name + "（" + data[i].person[j].age + "才）</li>n");
+            }
+        }
+    });
+});
+</script>
 
 <div class="container">
   <h2>機械割設定</h2>
@@ -23,11 +40,12 @@
   </ul>
 
   <div class="tab-content">
+    <!-- The Ocean -->
     <div id="game1" class="tab-pane fade in active">
 	    <div class="form-group">
 			<table class="table table-striped">
 			<tr>
-			<th>GameId</th>
+			<th>The Ocean</th>
 			<th>0</th>
 			<th>1</th>
 			<th>2</th>
@@ -47,240 +65,37 @@
 			<td><input type="text" class="form-control" value="10"></div></td>
 			<td><input type="text" class="form-control" value="10"></div></td>
 			</tr>
-
-			<tr>
-			<td>2</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>3</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>4</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>5</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>6</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>7</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>8</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>9</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>10</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>11</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>12</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>13</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>14</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>15</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>16</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>17</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>18</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>19</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>20</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>21</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
-			<tr>
-			<td>22</td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			<td><input type="text" class="form-control" value="10"></div></td>
-			</tr>
-
 		</div>
     </div>
+
+    <!-- The 大花火 -->
+    <div id="game2" class="tab-pane fade in active">
+	    <div class="form-group">
+			<table class="table table-striped">
+			<tr>
+			<th>大花火</th>
+			<th>0</th>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+			<th>5</th>
+			<th>6</th>
+			<tr>
+
+			<tr>
+			<td>1</td>
+			<td><input type="text" class="form-control" value="10"></div></td>
+			<td><input type="text" class="form-control" value="10"></div></td>
+			<td><input type="text" class="form-control" value="10"></div></td>
+			<td><input type="text" class="form-control" value="10"></div></td>
+			<td><input type="text" class="form-control" value="10"></div></td>
+			<td><input type="text" class="form-control" value="10"></div></td>
+			<td><input type="text" class="form-control" value="10"></div></td>
+			</tr>
+		</div>
+    </div>
+
   </div>
 </div>
 
