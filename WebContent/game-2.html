@@ -58,6 +58,30 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "game-2.unity3d");
 			});
+			
+			function GetParameter()
+			{
+				var query = document.location.search.substring(1);
+				u.getUnity().SendMessage("ApplicationState", "Response", query);
+			}
+			
+			function AlertByUnity(arg)
+			{
+				alert(arg);
+			}
+			
+			function transitionDeposite()
+			{
+				var path = "../index?from=/postlogin/payment/deposit";
+				window.location.href = path;
+			}
+
+			function transitionCampain()
+			{
+				var path = "../campain_1";
+				window.location.href = path;
+			}
+			
 		-->
 		</script>
 		<style type="text/css">
