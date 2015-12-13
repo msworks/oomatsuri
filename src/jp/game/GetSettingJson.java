@@ -30,7 +30,7 @@ import javax.servlet.http.HttpServletResponse;
  * 		result:error
  * }
  */
-public class GetSettingService extends HttpServlet
+public class GetSettingJson extends HttpServlet
 {
 	public void doGet(
 		HttpServletRequest request,
@@ -96,16 +96,41 @@ public class GetSettingService extends HttpServlet
         }
 
         StringBuilder sb = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
+
+        /*
+        {
+            "setting":[
+                0,
+                0,
+                0,
+                0,
+                20,
+                20,
+                20
+            ]
+        }
+        */
+
         for (String str : values) {
-            if (sb.length() > 0) {
-                sb.append(",");
-            }
+        	if(sb.length()>0)
+        	{
+        		sb.append(",");
+        	}
             sb.append(str);
         }
 
-        result = sb.toString();
+        sb2.append("{\"setting\":");
+        sb2.append("[");
+        sb2.append(sb);
+        sb2.append("]");
+        sb2.append("}");
+
+        result = sb2.toString();
 
 		System.out.println(result);
+
+		response.setContentType("application/json; charset=utf-8");
 
 		PrintWriter out = response.getWriter();
 		out.println(result);

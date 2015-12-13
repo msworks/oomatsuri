@@ -10,6 +10,11 @@
 	</servlet>
 
 	<servlet>
+		<servlet-name>GetSettingJson</servlet-name>
+		<servlet-class>jp.game.GetSettingJson</servlet-class>
+	</servlet>
+
+	<servlet>
 		<servlet-name>SetSettingService</servlet-name>
 		<servlet-class>jp.game.SetSettingService</servlet-class>
 	</servlet>
@@ -22,6 +27,11 @@
 	<servlet-mapping>
 		<servlet-name>GetSettingService</servlet-name>
 		<url-pattern>/GetSettingService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>GetSettingJson</servlet-name>
+		<url-pattern>/GetSettingJson</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>

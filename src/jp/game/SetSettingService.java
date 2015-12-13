@@ -48,17 +48,21 @@ public class SetSettingService extends HttpServlet
 
 	    while(en.hasMoreElements()){
 	       String name = (String)en.nextElement();
-	       System.out.print("Name = " + name);
 	       String value = request.getParameterValues(name)[0];
-	       System.out.println(",Value = " + value);
-
 	       params.put(name, value);
 	    }
 
-		String gameId = params.get("gameId");
-		String settingId = params.get("settingId");
-		String settingValue = params.get("settingValue");
+		String param = params.get("param");
 
+		if(param==null){
+			param = "s00:0";
+		}
+
+		String gameId = param.substring(1, 2);
+		String settingId = param.substring(2, 3);
+		String settingValue = param.split(":")[1];
+
+		System.out.println("[INFO]param:"+param);
 		System.out.println("[INFO]gameId:" + gameId);
 		System.out.println("[INFO]settingId:" + settingId);
 		System.out.println("[INFO]settingValue:" + settingValue);
@@ -109,7 +113,7 @@ public class SetSettingService extends HttpServlet
 		}
   		ResetSettingService.lines = lines;
 
-        String result ="{result:Setting change}";
+        String result ="{\"result\":\"Setting change\"}";
 		System.out.println(result);
 
 		PrintWriter out = response.getWriter();
