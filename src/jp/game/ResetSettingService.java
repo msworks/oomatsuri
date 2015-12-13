@@ -2,10 +2,7 @@ package jp.game;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ResetSettingService extends HttpServlet
 {
+	public static List<String> lines;
+
 	public void doGet(
 		HttpServletRequest request,
 		HttpServletResponse response
@@ -29,9 +28,9 @@ public class ResetSettingService extends HttpServlet
 
 		Path path;
 		String result = "{result:Init}";
-		String fileName = "setting.txt";
+		String fileName = "~/setting.txt";
 
-		List<String> lines = new ArrayList<String>();
+		lines = new ArrayList<String>();
 		lines.add("1 0 0");
 		lines.add("1 1 0");
 		lines.add("1 2 0");
@@ -46,9 +45,6 @@ public class ResetSettingService extends HttpServlet
 		lines.add("2 4 20");
 		lines.add("2 5 30");
 		lines.add("2 6 50");
-
-		path = Files.createFile(Paths.get(fileName));
-		Files.write(path, lines, Charset.forName("UTF-8"));
 
 		System.out.println(result);
 

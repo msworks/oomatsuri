@@ -2,8 +2,6 @@ package jp.game;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -49,7 +47,29 @@ public class GetSettingService extends HttpServlet
 		String fileName = "setting.txt";
 
         path = Paths.get(fileName);
-        List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
+
+//      List<String> lines = Files.readAllLines(path, Charset.forName("UTF-8"));
+        List<String> lines = ResetSettingService.lines;
+
+        if(lines == null){
+    		lines = new ArrayList<String>();
+    		lines.add("1 0 0");
+    		lines.add("1 1 0");
+    		lines.add("1 2 0");
+    		lines.add("1 3 0");
+    		lines.add("1 4 20");
+    		lines.add("1 5 30");
+    		lines.add("1 6 50");
+    		lines.add("2 0 0");
+    		lines.add("2 1 0");
+    		lines.add("2 2 0");
+    		lines.add("2 3 0");
+    		lines.add("2 4 20");
+    		lines.add("2 5 30");
+    		lines.add("2 6 50");
+    		ResetSettingService.lines = lines;
+        }
+
         List<Setting> settings = new ArrayList<Setting>();
 
         for(String line : lines)
