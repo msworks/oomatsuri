@@ -1,26 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <servlet>
-  	<servlet-name>restServlet4</servlet-name>
-  	<servlet-class>net.arnx.jsonic.web.RESTServlet</servlet-class>
-  	<init-param>
-  		<param-name>config</param-name>
-  		<param-value>
-  		{
-  			"debug":true,
-  			"mappings":{
-  				"/{class}.json":{
-  					"target":"jp.game.${class}Service",
-  					"method": {"POST":"getPostParameter"},
-	        		"verb": ["POST"]
-  				}
-  			}
-  		}
-  		</param-value>
-  	</init-param>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>restServlet4</servlet-name>
-    <url-pattern>*.json</url-pattern>
-  </servlet-mapping>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+"http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+	<servlet>
+		<servlet-name>GetSettingService</servlet-name>
+		<servlet-class>jp.game.GetSettingService</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>SetSettingService</servlet-name>
+		<servlet-class>jp.game.SetSettingService</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ResetSettingService</servlet-name>
+		<servlet-class>jp.game.ResetSettingService</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GetSettingService</servlet-name>
+		<url-pattern>/GetSettingService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SetSettingService</servlet-name>
+		<url-pattern>/SetSettingService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ResetSettingService</servlet-name>
+		<url-pattern>/ResetSettingService</url-pattern>
+	</servlet-mapping>
+
 </web-app>

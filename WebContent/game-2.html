@@ -15,10 +15,10 @@
 		<script type="text/javascript">
 		<!--
 			var config = {
-				width: 330, 
+				width: 330,
 				height: 528,
 				params: { enableDebugging:"0" }
-				
+
 			};
 			var u = new UnityObject2(config);
 
@@ -28,7 +28,7 @@
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
 				$missingScreen.hide();
 				$brokenScreen.hide();
-				
+
 				u.observeProgress(function (progress) {
 					switch(progress.pluginStatus) {
 						case "broken":
@@ -58,6 +58,17 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "game-2.unity3d");
 			});
+
+			function GetParameter()
+			{
+				var query = document.location.search.substring(1);
+				u.getUnity().SendMessage("ApplicationState", "Response", query);
+			}
+
+			function AlertByUnity(arg)
+			{
+				alert(arg);
+			}
 		-->
 		</script>
 		<style type="text/css">
