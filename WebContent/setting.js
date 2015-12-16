@@ -6,9 +6,6 @@ function open(){
 	.success(function(result) {
 	    console.log("[INFO]READ SUCCEED");
         $.each(result.setting, function(i, field){
-            //$("#debug").append(field + " ");
-            //console.log(i);
-            //console.log(field);
             $("#s1"+i).val(field);
         });
 	})
@@ -27,9 +24,6 @@ function open(){
 	.success(function(result) {
 	    console.log("[INFO]READ SUCCEED");
         $.each(result.setting, function(i, field){
-            //$("#debug").append(field + " ");
-            //console.log(i);
-            //console.log(field);
             $("#s2"+i).val(field);
         });
 	})
